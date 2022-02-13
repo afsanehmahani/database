@@ -82,9 +82,12 @@ public class API {
 
             //get remote ip address from request
             String remoteIP = request.get().getRemoteAddr();
+            
+            
+            
             //get the timestamp of the request
             long access_ts = System.currentTimeMillis();
-            System.out.println("IP: " + remoteIP + " Timestamp: " + access_ts);
+            System.out.println("IP: " + remoteIP + " frequency: " + count(remoteIP));
 
             //insert access data
             String insertQuery = "INSERT INTO accesslog VALUES ('" + remoteIP + "'," + access_ts + ")";
