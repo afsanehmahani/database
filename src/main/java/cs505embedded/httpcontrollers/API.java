@@ -90,7 +90,7 @@ public class API {
             System.out.println("IP: " + remoteIP + " frequency: " + count(remoteIP));
 
             //insert access data
-            String insertQuery = "INSERT INTO accesslog VALUES ('" + remoteIP + "'," + access_ts + ")";
+            String insertQuery = "INSERT INTO accesslog VALUES ('" + remoteIP + "'," + count(remoteIP) + ")";
             Launcher.dbEngine.executeUpdate(insertQuery);
 
             //get accesslog data
